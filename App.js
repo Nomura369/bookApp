@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
 
-export default function App() {
+import { useFonts, Roboto_400Regular } from "@expo-google-fonts/roboto";
+
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Navigation from "./src/navigation/index";
+import { GluestackUIProvider, StatusBar } from '@gluestack-ui/themed';
+import { config } from '@gluestack-ui/config';
+
+const App = () => {
+  //載入字體
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+  });
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={{flex: 1, fontFamily: 'Roboto_400Regular'}}>
+        <GluestackUIProvider config={config}>
+          <StatusBar />
+          <Navigation />   
+        </GluestackUIProvider>         
+      </SafeAreaView>  
+    </SafeAreaProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

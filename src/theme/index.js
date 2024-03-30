@@ -10,4 +10,4 @@ const BookTheme = {
    },
  };
 
- export default MyTheme;
+ export default BookTheme;
