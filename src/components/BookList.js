@@ -1,48 +1,37 @@
 /*書表統整*/
-import { SectionList, FlatList, Text } from "@gluestack-ui/themed";
+import { FlatList, Text, VStack, ScrollView } from "@gluestack-ui/themed";
+import { useTheme } from '@react-navigation/native';
 
 import PopularBook from "./PopularBook";
 import NewestBook from "./NewestBook";
 
-const BookList = ({ sections }) => {
-  const renderSectionHeader = (title) => {
-    <Text fontSize={24} fontWeight='500' mb={16}>{title}</Text>
-  };
-  
-  const renderItem = ({ section }) => {
-    if(section.title == "Popular Books"){
-      return(
-        <FlatList 
-          horizontal={true}
-          data={section.data}
-          renderItem={({ item }) => <PopularBook book={item} />}
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={ item => item.title }
-        />
-      );
-    } 
-    else if(section.title == "Newest"){
-      return(
-        <FlatList 
-          horizontal={true}
-          data={section.data}
-          renderItem={({ item }) => <NewestBook book={item} />}
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={ item => item.title }
-        />
-      );
-    }
-  };
-    
+const BookList = ({ popular, newest, navigation }) => {
+  const { colors } = useTheme();
   return (
-    <SectionList 
-      sections={sections}
-      contentContainerStyle={{ paddingHorizontal: 10 }}
-      stickySectionHeadersEnabled={false}
-      renderSectionHeader={renderSectionHeader} // title樣式
-      renderItem={renderItem} // data樣式
-      keyExtractor={ item => item.title }
-    />
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <VStack ml={20} mt={8} mb={60}>
+        <VStack mb={16}>
+          <Text fontSize={24} fontWeight="500" color={colors.black} mb={16}>{popular.title}</Text>
+          <FlatList
+          horizontal 
+          showsHorizontalScrollIndicator={false}
+          data={popular.data}
+          renderItem={({ item }) => <PopularBook book={item} />}
+          keyExtractor={ item => item.title }
+        />
+        </VStack>
+        <VStack>
+          <Text fontSize={24} fontWeight="500" color={colors.black} mb={16}>{newest.title}</Text>
+          <FlatList
+          horizontal 
+          showsHorizontalScrollIndicator={false}
+          data={newest.data}
+          renderItem={({ item }) => <NewestBook book={item} navigation={navigation} />}
+          keyExtractor={ item => item.title }
+        />
+        </VStack>
+      </VStack>
+    </ScrollView>
   );
 };
 

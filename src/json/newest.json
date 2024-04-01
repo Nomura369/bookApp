@@ -1,0 +1,32 @@
+{
+    "title": "Newest",
+    "data": [
+        {
+            "title": "Yves Saint Laurent",
+            "stars": "4.0",
+            "stars_image":"https://i.imgur.com/xYlfnIH.png",
+            "author": "Suzy Menkes",
+            "image": "https://i.imgur.com/6T3xFD3.png",
+            "price": "$46.99",
+            "description": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
+        },
+        {
+            "title": "The Book of Signs",
+            "stars": "3.0",
+            "stars_image":"https://i.imgur.com/SnF3aOD.png",
+            "author": "Rudolf Koch",
+            "image": "https://i.imgur.com/dLAfipS.png",
+            "price": "$24.66",
+            "description": "This unusual collection of primitive and medieval symbols provides one of the most fertile single sources of decorative ideas available today."
+        },
+        {
+            "title": "Stitched Up",
+            "stars": "3.0",
+            "stars_image":"https://i.imgur.com/SnF3aOD.png",
+            "author": "Tansy E. Hoskins",
+            "image": "https://i.imgur.com/8yEX6VT.png",
+            "price": "$19.95",
+            "description": "Beautifully illustrated with specially commissioned designs, Stitched Up delves into the alluring world of fashion to reveal what is behind the clothes we wear. "
+        }
+    ]
+}

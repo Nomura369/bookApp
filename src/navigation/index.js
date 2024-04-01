@@ -11,6 +11,7 @@ import {
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { Divider, Image, Text, Center, VStack } from '@gluestack-ui/themed';
+import { TouchableOpacity } from 'react-native';
 
 import BookScreen from '../screens/BookScreen';
 import DetailScreen from '../screens/DetailScreen';
@@ -180,29 +181,29 @@ const HomeStack = ({ navigation }) => {
     
     return (
       <Stack.Navigator
-        /*screenOptions={{
-            headerShown: false
-        }}*/
+        screenOptions={{
+            //headerShown: false
+            headerShadowVisible: false,
+            headerTintColor: "#fff", // 隱藏 Header 文字
+        }}
       >
         <Stack.Screen
           name="HomeStack"
           component={BookScreen}
           options={{
-            headerTitleAlign: "center",
-            headerTintColor: "#fff",
             headerLeft: () => (
               <MaterialCommunityIcons
                 name={'menu'}
                 size={24}
                 onPress={() => navigation.openDrawer()}
-                style={{ marginLeft: 8, color: colors.black }}
+                style={{ marginLeft: 1, color: colors.black }}
               />
             ),
             headerRight: () => (
                 <MaterialCommunityIcons
                   name={'magnify'}
                   size={24}
-                  style={{ marginRight: 8, color: colors.black }}
+                  style={{ marginRight: 1, color: colors.black }}
                 />
               ),
           }}
@@ -211,13 +212,20 @@ const HomeStack = ({ navigation }) => {
           name="Detail"
           component={DetailScreen}
           options={() => ({
-            headerTitleAlign: "center",
-            headerTintColor: "#fff",
+            headerLeft: () => (
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <MaterialCommunityIcons 
+                  name="chevron-left" 
+                  size={24} 
+                  style={{color: colors.black}}
+                />
+              </TouchableOpacity>
+            ),
             headerRight: () => (
                 <MaterialCommunityIcons
                   name={'bookmark-outline'}
                   size={24}
-                  style={{ marginRight: 16, color: colors.black }}
+                  style={{ marginRight: 4, color: colors.black }}
                 />
               ),
           })}

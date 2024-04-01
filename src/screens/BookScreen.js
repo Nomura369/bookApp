@@ -1,13 +1,12 @@
 import { Box } from "@gluestack-ui/themed";
 import BookList from "../components/BookList";
-import bookData from "../json/books.json";
+import popularData from "../json/popular.json";
+import newestData from "../json/newest.json";
 
-const BookScreen = () => {
+const BookScreen = ({ navigation }) => {
   return (
-    <Box>
-      <BookList 
-        sections={bookData}
-      />
+    <Box bg="#fff">
+      <BookList popular={popularData} newest={newestData} navigation={navigation} />
     </Box>
   );
 };
