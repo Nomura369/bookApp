@@ -10,7 +10,7 @@ import {
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { Divider, Image, Text, Center } from '@gluestack-ui/themed';
+import { Divider, Image, Text, Center, VStack } from '@gluestack-ui/themed';
 
 import BookScreen from '../screens/BookScreen';
 import DetailScreen from '../screens/DetailScreen';
@@ -65,14 +65,16 @@ const CustomDrawerContent = (props) => { // Drawer頁面排版
       <DrawerContentScrollView {...props}
         contentContainerStyle={{ paddingTop: 0 }}
       >
-            <Image
-            height={48}
-            width={48}
-            source={require("../images/user.png")}
-            alt='userImage'
-            />
-            <Text fontSize={24} fontWeight='500' color={colors.black}>May</Text>
-            <Divider my={2} />
+            <VStack mt={40} mb={16} ml={16}>
+              <Image
+              height={48}
+              width={48}
+              source={{ uri: "https://i.imgur.com/L1dIio4.png" }}
+              alt='userImage'
+              />
+              <Text fontSize={24} fontWeight='500' color={colors.black} mt={16}>May</Text>
+            </VStack>
+            <Divider mb={8} />
 
             {/*Drawer.Screen內容*/}
             <DrawerItemList {...props} />

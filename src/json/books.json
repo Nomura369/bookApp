@@ -5,17 +5,17 @@
        {
        "title": "Fashionopolis",
        "author": "Dana Thomas",
-       "image": "https://imgur.com/DV20YEx"
+       "image": "https://i.imgur.com/DV20YEx.png"
        },
        {
         "title": "Chanel",
         "author": "Patrick Mauriès",
-        "image": "https://imgur.com/xcAtQHA"
+        "image": "https://i.imgur.com/xcAtQHA.png"
        },
        {
         "title": "Calligraphy",
         "author": "June & Lucy",
-        "image": "https://imgur.com/undefined"
+        "image": "https://i.imgur.com/undefined.png"
        }
     ]},
     {
@@ -24,25 +24,25 @@
           {
             "title": "Yves Saint Laurent",
             "stars": 4.0,
-            "stars_image":"https://imgur.com/xYlfnIH",
+            "stars_image":"https://i.imgur.com/xYlfnIH.png",
             "author": "Suzy Menkes",
-            "image": "https://imgur.com/6T3xFD3",
+            "image": "https://i.imgur.com/6T3xFD3.png",
             "price": "$46.99",
             "description": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
           },
           {
             "title": "The Book of Signs",
             "stars": 3.0,
-            "stars_image":"https://imgur.com/SnF3aOD",
+            "stars_image":"https://i.imgur.com/SnF3aOD.png",
             "author": "Rudolf Koc ",
-            "image": "https://imgur.com/dLAfipS"
+            "image": "https://i.imgur.com/dLAfipS.png"
           },
           {
             "title": "Stitched Up",
             "stars": 3.0,
-            "stars_image":"https://imgur.com/SnF3aOD",
+            "stars_image":"https://i.imgur.com/SnF3aOD.png",
             "author": "Tansy E. Hoskins",
-            "image": "https://imgur.com/8yEX6VT"
+            "image": "https://i.imgur.com/8yEX6VT.png"
           }
     ]}
  ]
