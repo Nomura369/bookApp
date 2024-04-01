@@ -10,8 +10,9 @@ import {
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { Divider, Image, Text, Center, VStack } from '@gluestack-ui/themed';
+import { Divider, Image, Text, Center, VStack, Pressable } from '@gluestack-ui/themed';
 import { TouchableOpacity } from 'react-native';
+import { useState } from "react";
 
 import BookScreen from '../screens/BookScreen';
 import DetailScreen from '../screens/DetailScreen';
@@ -178,6 +179,20 @@ const TheTab = () => {
 /*Stack專區-起點*/
 const HomeStack = ({ navigation }) => {
     const { colors } = useTheme(); // 來自theme裡頭的index.js
+    // 狀態變數
+    const [icon, setIcon] = useState("bookmark-outline");
+    const [iconColor, setIconColor] = useState(colors.black);
+    const toggleIcon = () => {
+      // 目前每個細節頁的書籤 icon 都一樣，即使換頁了點擊過的效果也維持不變。 
+      if(icon == "bookmark-outline"){
+        setIcon("bookmark");
+        setIconColor(colors.purple);
+      }
+      else{
+        setIcon("bookmark-outline"); 
+        setIconColor(colors.black);
+      }
+    }; 
     
     return (
       <Stack.Navigator
@@ -222,11 +237,13 @@ const HomeStack = ({ navigation }) => {
               </TouchableOpacity>
             ),
             headerRight: () => (
+              <Pressable onPress={toggleIcon}>
                 <MaterialCommunityIcons
-                  name={'bookmark-outline'}
+                  name={icon}
                   size={24}
-                  style={{ marginRight: 4, color: colors.black }}
+                  style={{ marginRight: 4, color: iconColor }}
                 />
+              </Pressable>
               ),
           })}
         />
